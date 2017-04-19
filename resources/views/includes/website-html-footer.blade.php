@@ -86,7 +86,7 @@
     }
 </script>
 
-<script type="text/javascript"> var base_url = ""; </script>
+
 
 
 

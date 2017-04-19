@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 text-center">
-                <img src="assets/public/img/header_slider.jpg">
+                <img src="{{asset('assets/public/img/header_slider.jpg')}}">
             </div>
             <div class="col-sm-6 text-center">
-                <img src="assets/public/img/header.jpg" >
+                <img src="{{asset('assets/public/img/header.jpg')}}" >
             </div>
         </div>
         <div class="row">

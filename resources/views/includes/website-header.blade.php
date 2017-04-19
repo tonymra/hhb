@@ -2,7 +2,7 @@
 <section id="header" class="bg-color0">
     <div class="container"><div class="row">
 
-            <a class="navbar-brand" href='/'><img src="assets/public/example/logo.png" alt=""></a>
+            <a class="navbar-brand" href='/'><img src="{{asset('assets/public/example/logo.png')}}" alt="HHB"></a>
 
             <div class="col-sm-12 mainmenu_wrap"><div class="main-menu-icon visible-xs"><span></span><span></span><span></span></div>
                 <ul id="mainmenu" class="nav menu sf-menu responsive-menu superfish">
@@ -16,15 +16,15 @@
                         <ul class="nav dropdown-menu">
 
                             <li class="">
-                                <a href=''>About Janette</a>
+                                <a href='/about/janette'>About Janette</a>
                             </li>
 
                             <li class="">
-                                <a href=''>About Baby Massage</a>
+                                <a href='/about/baby-massage'>About Baby Massage</a>
                             </li>
 
                             <li class="">
-                                <a href=''>About Baby Yoga</a>
+                                <a href='/about/baby-yoga'>About Baby Yoga</a>
                             </li>
 
 
@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="">
-                        <a href=''>Booking</a>
+                        <a href='/booking'>Book</a>
                     </li>
 
                 </ul>

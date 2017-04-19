@@ -12,5 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $pagetitle="Welcome";
+    return view('welcome',compact('pagetitle'));
+});
+
+Route::get('/about/janette', function () {
+
+    $pagetitle="Janette Erasmus";
+    return view('about-janette',compact('pagetitle'));
+});
+
+Route::get('/about/baby-massage', function () {
+
+    $pagetitle="Baby Massage";
+    return view('about-baby-massage',compact('pagetitle'));
+});
+
+Route::get('/about/baby-yoga', function () {
+
+    $pagetitle="Baby Yoga";
+    return view('about-baby-yoga',compact('pagetitle'));
+});
+
+Route::get('/booking', function () {
+
+    $pagetitle="Make a booking";
+    return view('booking',compact('pagetitle'));
 });
