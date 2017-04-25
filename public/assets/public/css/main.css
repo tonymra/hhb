@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
 
+
+
 /*override bootstrap*/
 .clearfix {clear: both;}
 .navbar-brand {float: none; padding: 0;}
@@ -1631,24 +1633,8 @@ display: inline-block;
 .comment-reply-title {margin: 0 0 22px; font-size: 30px;}
 .comment-respond label, .contact-form label {}
 form.contact-form {margin-top: 0px; margin-bottom: 20px; max-width: 620px; margin:0 auto;}
-form.contact-form input, form.contact-form textarea {text-align: center;}
-p.comment-form-author, p.comment-form-email, p.comment-form-url {
-margin-bottom: 10px;
-}
-p.comment-form-author, p.comment-form-email {/*padding-right: 10px;*/}
-p.comment-form-comment:before, p.contact-form-message:before {
-    display: table; content: " ";
-}
-.comment-respond p.form-submit {text-align: center; margin-top: 40px;}
-.comment-form input, .comment-form textarea {text-align: center;}
-@media (max-width: 570px) {
-    .comments-area ol.children li{padding: 30px 0 0 30px;}
 
-    p.comment-form-author, p.comment-form-email, p.comment-form-url, p.contact-form-name, p.contact-form-email, p.contact-form-subject {
-        float: none; padding: 0 8px 0 0; width: 100%;
-    }
-    p.contact-form-message {padding-right: 8px;}
-}
+
 
 /*widgets*/
 .single_teaser {

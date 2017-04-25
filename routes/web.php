@@ -40,3 +40,5 @@ Route::get('/booking', function () {
     $pagetitle="Make a booking";
     return view('booking',compact('pagetitle'));
 });
+
+Route::post('/enquiry','WebsiteLeadsController@store');

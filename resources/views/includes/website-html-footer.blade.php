@@ -5,7 +5,7 @@
 <script src="{{asset('assets/public/assets/public/js/vendor/respond.min.js')}}"></script>
 <script src="{{asset('assets/public/js/vendor/placeholders.min.js')}}"></script>
 <script src="{{asset('assets/public/js/vendor/jquery-1.10.2.min.js')}}"></script>
-<script src="{{asset('assets/public/js/vendor/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/public/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/public/js/vendor/hoverIntent.js')}}"></script>
 <script src="{{asset('assets/public/js/vendor/superfish.js')}}"></script>
 <script src="{{asset('assets/public/js/vendor/jquery.actual.min.js')}}"></script>
@@ -94,7 +94,7 @@
     // When the document is ready
     $(document).ready(function () {
 
-        $('#babydob').datepicker({
+        $('#baby_dob').datepicker({
             format: "yyyy-mm-dd"
         });
 

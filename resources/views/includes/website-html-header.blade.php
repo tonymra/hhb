@@ -33,7 +33,7 @@
 
 
     <!-- Assets -->
-    <link rel="stylesheet" href="{{asset('assets/public/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/public/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/public/css/animations.css')}}">
     <link rel="stylesheet" href="{{asset('assets/public/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/public/css/datepicker.css')}}">

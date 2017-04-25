@@ -55,8 +55,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h2 class="block-header">Get In Touch</h2>
-                <p>Feel free to contact us at any time</p>
+                <h2 >Get in touch</h2>
+                <p class="lead">Feel free to contact us at any time</p>
                 <p id="social" class="text-center">
                     <a class="socialico-facebook" href="https://www.facebook.com/happyhealthybaby/" target="_blank" title="Facebook">£</a>
                     <a class="socialico-google" href="#"  target="_blank"  title="Google">#</a>
@@ -65,60 +65,120 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div class="contact-form">
 
 
+            <div class="col-lg-8 col-lg-offset-2">
 
 
+                {!! Form::open(['method'=>'POST' ,'action'=>'WebsiteLeadsController@store', 'files'=>true]) !!}
 
-                    <div id="errormsgaddlead" class="alert alert-danger hidden col-md-6 col-md-offset-3 alert-error-addlead ">	</div>
+                    <div class="messages">
 
-                    <form class="" method="post" action="leads/add_pro/" accept-charset="utf-8" >
+                        @if(Session::has('created_enquiry'))
+
+                            <div class="alert alert-success alert-white rounded ">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <p>{{session('created_enquiry')}}</p>
+                            </div>
+
+                        @endif
 
 
+                    </div>
 
-                        <div  id="name-group" class="col-md-6 col-md-offset-3">
-                            <label for="cell">Name <span class="required">*</span></label>
-                            <input type="text" aria-required="true" value="" name="name" id="name" class="form-control" placeholder="">
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    {!! Form::label('name','Your name *') !!}
+                                    {!! Form::text('name', null,
+                                        array('class'=>'form-control')) !!}
+                                    <div class="help-block with-errors">
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                       <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('baby_dob') ? ' has-error' : '' }}">
+                                    {!! Form::label('baby_dob','Baby\'s date of birth *') !!}
+                                    {!! Form::text('baby_dob', null,
+                                        array('class'=>'form-control')) !!}
+                                    <div class="help-block with-errors">
+                                        @if ($errors->has('baby_dob'))
+                                            <span class="help-block">
+                                                       <strong>{{ $errors->first('baby_dob') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    {!! Form::label('email','Email address *') !!}
+                                    {!! Form::email('email', null,
+                                        array('class'=>'form-control')) !!}
+                                    <div class="help-block with-errors">
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                       <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('phone','Mobile phone number *') !!}
+                                    {!! Form::text('phone', null,
+                                        array('class'=>'form-control')) !!}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+                                    {!! Form::label('message','Message *') !!}
+                                    {!! Form::textarea('message', null,
+                                        array('class'=>'form-control')) !!}
+                                    <div class="help-block with-errors">
+                                        @if ($errors->has('message'))
+                                            <span class="help-message">
+                                                       <strong>{{ $errors->first('message') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div  id="email-group" class="col-md-6 col-md-offset-3">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="">
+                            <div class="col-md-12 text-center">
+                              <div class="form-group">
+                                {!! Form::submit('Send message',
+                                  array('class'=>'btn btn-success btn-lg')) !!}
+                              </div>
+                            </div>
+
+
                         </div>
 
+                    </div>
 
-                        <div id="cell-group"  class="col-md-6 col-md-offset-3">
-                            <label for="cell">Mobile Number <span class="required">*</span></label>
-                            <input type="text" aria-required="true" value="" name="cell" id="cell" class="form-control" placeholder="">
-                        </div>
+                {!! Form::close() !!}
 
-
-
-                        <div id="babydob-group" class="col-md-6 col-md-offset-3">
-                            <label for="cell">Baby's Date of Birth <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="baby_dob" id="babydob" class="form-control" placeholder="">
-                        </div>
+            </div><!-- /.8 -->
 
 
-                        <div  id="message-group" class="col-md-6 col-md-offset-3 ">
-                            <label for="message">Message</label>
-                            <textarea aria-required="true" rows="5" name="message" id="message" class="form-control" placeholder=""></textarea>
-                        </div>
 
 
-                        <div class=" text-center col-md-6 col-md-offset-3">
-
-                            <button  type="submit" class="theme_btn btn-add-lead"> Submit</button>
-                        </div>
-
-                    </form>
-
-
-                </div>
-            </div>
 
         </div>
     </div>
