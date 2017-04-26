@@ -11,6 +11,11 @@
 |
 */
 
+
+
+//Website Routes
+
+
 Route::get('/', function () {
 
     $pagetitle="Welcome";
@@ -42,3 +47,28 @@ Route::get('/booking', function () {
 });
 
 Route::post('/enquiry','WebsiteLeadsController@store');
+
+
+
+
+//Admin Routes
+
+Auth::routes();
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
+
+//Check if user is Admin
+
+Route::group(['middleware'=>'admin'],function(){
+
+
+    Route::get('/admin',function(){
+
+        return view('admin.home');
+    });
+
+    Route::get('/home', 'AdminHomeController@index');
+
+
+});
