@@ -18,6 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('name');
             $table->string('address')->nullable();
             $table->integer('user_id')->unsigned()->nullable()->index();
+            $table->string('slug');
             $table->timestamps();
         });
     }

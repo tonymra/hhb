@@ -94,7 +94,7 @@
     // When the document is ready
     $(document).ready(function () {
 
-        $('#baby_dob').datepicker({
+        $('#babydob').datepicker({
             format: "yyyy-mm-dd"
         });
 

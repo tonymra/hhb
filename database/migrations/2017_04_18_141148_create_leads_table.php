@@ -18,9 +18,10 @@ class CreateLeadsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->date('baby_dob')->nullable();
+            $table->date('babydob')->nullable();
             $table->string('status')->default('NEW');
             $table->text('message')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }

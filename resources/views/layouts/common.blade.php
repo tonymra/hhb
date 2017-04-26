@@ -105,14 +105,14 @@
 
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group{{ $errors->has('baby_dob') ? ' has-error' : '' }}">
-                                    {!! Form::label('baby_dob','Baby\'s date of birth *') !!}
-                                    {!! Form::text('baby_dob', null,
+                                <div class="form-group{{ $errors->has('babydob') ? ' has-error' : '' }}">
+                                    {!! Form::label('babydob','Baby\'s date of birth *') !!}
+                                    {!! Form::text('babydob', null,
                                         array('class'=>'form-control')) !!}
                                     <div class="help-block with-errors">
-                                        @if ($errors->has('baby_dob'))
+                                        @if ($errors->has('babydob'))
                                             <span class="help-block">
-                                                       <strong>{{ $errors->first('baby_dob') }}</strong>
+                                                       <strong>{{ $errors->first('babydob') }}</strong>
                                                     </span>
                                         @endif
                                     </div>
@@ -135,11 +135,17 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                     {!! Form::label('phone','Mobile phone number *') !!}
                                     {!! Form::text('phone', null,
                                         array('class'=>'form-control')) !!}
-                                    <div class="help-block with-errors"></div>
+                                    <div class="help-block with-errors">
+                                        @if ($errors->has('phone'))
+                                            <span class="help-block">
+                                                       <strong>{{ $errors->first('phone') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +155,7 @@
                               <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
                                     {!! Form::label('message','Message *') !!}
                                     {!! Form::textarea('message', null,
-                                        array('class'=>'form-control')) !!}
+                                        array('class'=>'form-control','rows'=>3)) !!}
                                     <div class="help-block with-errors">
                                         @if ($errors->has('message'))
                                             <span class="help-message">

@@ -23,6 +23,7 @@ class CreateClientsTable extends Migration
             $table->integer('disclaimer')->default(1);
             $table->integer('paid')->default(0);
             $table->integer('is_active')->default(1);
+            $table->string('slug');
             $table->timestamps();
         });
     }

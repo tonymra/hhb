@@ -36,7 +36,7 @@
 
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Baby Massage</span></a></li>
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Baby Yoga</span></a></li>
-                    <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Leads</span></a></li>
+                    <li><a href="{{route('admin.leads.index')}}"><i class="icon-list-unordered"></i> <span>Leads</span></a></li>
 
                     <li class="navigation-header"><span>Baby Massage</span> <i class="icon-menu" title="Baby Massage"></i></li>
 

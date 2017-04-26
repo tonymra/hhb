@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>HHB | {{$pagetitle}}</title>
+    <title>HHB | {{$pagetitle ? $pagetitle : 'Admin'}}</title>
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -31,6 +31,19 @@
     <script type="text/javascript" src="{{asset('assets/admin/js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/admin/js/plugins/ui/moment/moment.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/admin/js/plugins/pickers/daterangepicker.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/tables/datatables/datatables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/forms/selects/select2.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/admin/js/core/libraries/jquery_ui/datepicker.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/pickers/pickadate/picker.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/pickers/pickadate/picker.date.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/pickers/pickadate/picker.time.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/plugins/pickers/pickadate/legacy.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/pages/picker_date.js')}}"></script>
+
+
+    <script type="text/javascript" src="{{asset('assets/admin/js/pages/datatables_basic.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('assets/admin/js/core/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/admin/js/pages/dashboard.js')}}"></script>

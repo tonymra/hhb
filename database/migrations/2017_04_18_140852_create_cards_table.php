@@ -19,6 +19,7 @@ class CreateCardsTable extends Migration
             $table->string('price');
             $table->integer('quantity');
             $table->integer('user_id')->unsigned()->nullable()->index();
+            $table->string('slug');
             $table->timestamps();
         });
     }

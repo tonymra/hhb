@@ -27,6 +27,7 @@ class CreateCoursesTable extends Migration
             $table->string('price');
             $table->integer('is_active')->default(1);
             $table->integer('user_id')->unsigned()->nullable()->index();
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -27,8 +27,9 @@ class LeadsCreateRequest extends FormRequest
 
             'name'=>'required',
             'email'=>'required|email',
-            'baby_dob'=>'required',
-            'message'=>'required'
+            'babydob'=>'required',
+            'message'=>'required',
+            'phone'=>'required|numeric'
         ];
 
 
@@ -40,9 +41,11 @@ class LeadsCreateRequest extends FormRequest
         return [
             'name.required' => 'Please enter your name',
             'email.required' => 'Please enter your email address',
-            'baby_dob.required' => 'Please enter your baby\'s date of birth',
+            'babydob.required' => 'Please enter your baby\'s date of birth',
             'email.email' => 'Your email address is not valid',
             'message.required'  => 'Please enter your message',
+            'phone.required' => 'Please enter your mobile phone number',
+            'phone.numeric' => ' Invalid format (numbers only)',
         ];
     }
 }
