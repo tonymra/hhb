@@ -65,7 +65,8 @@ Route::group(['middleware'=>'admin'],function(){
 
     Route::get('/admin',function(){
 
-        return view('admin.home');
+        $pagetitle = "Admin";
+        return view('admin.home',compact('pagetitle'));
     });
 
     Route::get('/home', 'AdminHomeController@index');
