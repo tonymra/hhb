@@ -46,7 +46,7 @@
 
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Classes</span></a></li>
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Attendance</span></a></li>
-                    <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Class Cards</span></a></li>
+                    <li><a href="{{route('admin.cards.index')}}"><i class="icon-list-unordered"></i> <span>Class Cards</span></a></li>
 
                     <li class="navigation-header"><span>Settings</span> <i class="icon-menu" title="Settings"></i></li>
 

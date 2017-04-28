@@ -99,4 +99,18 @@ Route::group(['middleware'=>'admin'],function(){
 
     ]]);
 
+    //Cards
+
+    Route::resource('/admin/cards', 'AdminCardsController',['names'=>[
+
+        'index'=>'admin.cards.index',
+        'create'=>'admin.cards.create',
+        'store'=>'admin.cards.store',
+        'edit'=>'admin.cards.edit',
+        'show'=>'admin.cards.show',
+        'destroy'=>'admin.cards.destroy'
+
+
+    ]]);
+
 });

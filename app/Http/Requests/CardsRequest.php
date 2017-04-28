@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LocationsRequest extends FormRequest
+class CardsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,15 +25,19 @@ class LocationsRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'address'=>'required'
+            'price'=>'required|numeric',
+            'quantity'=>'required|numeric',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Please enter the location name',
-            'address.required'  => 'Please enter the location address'
+            'name.required' => 'Please enter the name',
+            'price.required'  => 'Please enter the price',
+            'quantity.required' => 'Please specify the number of credits',
+            'price.numeric'  => 'Please enter numbers only',
+            'quantity.numeric' => 'Please enter numbers only'
         ];
     }
 }

@@ -75,6 +75,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Location');
     }
 
+    public function cards(){
+
+        return $this->hasMany('App\Card');
+    }
+
 
     public function isAdmin(){
 

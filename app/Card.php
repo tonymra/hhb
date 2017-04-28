@@ -42,4 +42,22 @@ class Card extends Model
 
         return $this->belongsTo('App\User','user_id','id');
     }
+
+    //Accessor
+
+    public function getPriceAttribute($value, $fractional=false){
+
+        if ($fractional) {
+            $value = sprintf('%.2f', $value);
+        }
+        while (true) {
+            $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $value);
+            if ($replaced != $value) {
+                $value = $replaced;
+            } else {
+                break;
+            }
+        }
+        return $value;
+    }
 }
