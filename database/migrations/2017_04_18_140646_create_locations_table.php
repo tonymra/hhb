@@ -20,6 +20,8 @@ class CreateLocationsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable()->index();
             $table->string('slug');
             $table->timestamps();
+
+
         });
     }
 

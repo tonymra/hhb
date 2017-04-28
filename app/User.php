@@ -70,6 +70,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Photo');
     }
 
+    public function locations(){
+
+        return $this->hasMany('App\Location');
+    }
+
 
     public function isAdmin(){
 

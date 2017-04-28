@@ -71,6 +71,8 @@ Route::group(['middleware'=>'admin'],function(){
 
     Route::get('/home', 'AdminHomeController@index');
 
+    //Leads
+
     Route::resource('/admin/leads', 'AdminLeadsController',['names'=>[
 
         'index'=>'admin.leads.index',
@@ -83,5 +85,18 @@ Route::group(['middleware'=>'admin'],function(){
 
     ]]);
 
+    //Locations
+
+    Route::resource('/admin/locations', 'AdminLocationsController',['names'=>[
+
+        'index'=>'admin.locations.index',
+        'create'=>'admin.locations.create',
+        'store'=>'admin.locations.store',
+        'edit'=>'admin.locations.edit',
+        'show'=>'admin.locations.show',
+        'destroy'=>'admin.locations.destroy'
+
+
+    ]]);
 
 });

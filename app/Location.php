@@ -13,6 +13,10 @@ class Location extends Model
     use Sluggable;
     use SluggableScopeHelpers;
 
+
+    protected $table = 'locations';
+
+
     /**
      * Return the sluggable configuration array for this model.
      *
@@ -36,4 +40,9 @@ class Location extends Model
         'user_id'
 
     ];
+
+    public function user(){
+
+        return $this->belongsTo('App\User','user_id','id');
+    }
 }

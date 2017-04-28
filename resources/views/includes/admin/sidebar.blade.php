@@ -50,6 +50,7 @@
 
                     <li class="navigation-header"><span>Settings</span> <i class="icon-menu" title="Settings"></i></li>
 
+                    <li><a href="{{route('admin.locations.index')}}"><i class="icon-list-unordered"></i> <span>Locations</span></a></li>
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>User Accounts</span></a></li>
                     <li><a href="{{  url('/admin') }}"><i class="icon-list-unordered"></i> <span>Backup</span></a></li>
 
