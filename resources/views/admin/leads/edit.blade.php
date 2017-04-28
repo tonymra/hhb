@@ -13,9 +13,9 @@
 
             <div class="heading-elements">
                 <div class="heading-btn-group">
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-bars-alt text-primary"></i><span>Baby Massage</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calculator text-primary"></i> <span>Baby Yoga</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calendar5 text-primary"></i> <span>Yoga Attendance</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_leads}}<span>Total Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_new_leads}} <span>New Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_archived_leads}} <span>Archived Leads</span></a>
                 </div>
             </div>
         </div>
@@ -110,6 +110,7 @@
 
                         <div class="form-group{{ $errors->has('babydob') ? ' has-error' : '' }}">
                             {!! Form::label('babydob','Baby\'s date of birth') !!}
+                            <p>{{\Carbon\Carbon::parse($lead->babydob)->diff(\Carbon\Carbon::now())->format('%y year(s), %m month(s) and %d day(s)')}}</p>
                             {!! Form::text('babydob', null,
                                 array('class'=>'form-control daterange-single border-teal border-lg')) !!}
 
@@ -136,23 +137,14 @@
 
 
                     </fieldset>
-                   <div class="col-md-6">
+                   <div class="col-md-12">
                        <div class="text-center">
                            {!! Form::submit('Update Lead',
                              array('class'=>'btn btn-success')) !!}
                        </div>
                    </div>
 
-                    <div class="col-md-6">
-                        {!! Form::open(['method'=>'DELETE' ,'action'=>['AdminLeadsController@destroy',$lead->id]]) !!}
 
-
-                        <div class="form-group">
-                            {!! Form::submit('Delete Lead',
-                              array('class'=>'btn btn-danger ')) !!}
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
 
 
 

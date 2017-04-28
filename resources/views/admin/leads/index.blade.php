@@ -13,9 +13,9 @@
 
             <div class="heading-elements">
                 <div class="heading-btn-group">
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-bars-alt text-primary"></i><span>Baby Massage</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calculator text-primary"></i> <span>Baby Yoga</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calendar5 text-primary"></i> <span>Yoga Attendance</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_leads}}<span>Total Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_new_leads}} <span>New Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_archived_leads}} <span>Archived Leads</span></a>
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                     <th>Email</th>
                     <th>Status</th>
                     <th>Created</th>
-                    <th>Attended? </th>
+                    <th>Action </th>
 
                 </tr>
                 </thead>
@@ -116,16 +116,34 @@
                     <td>{{$lead->status}}</td>
                     <td>{{$lead->created_at->diffforHumans()}}</td>
                     <td>
+
+                        @if($lead->status == 'NEW')
                             {!! Form::model($leads,['method'=>'PATCH' ,'action'=>['AdminLeadsController@update',$lead->id]]) !!}
 
-                            <input type="hidden" name="status" value="ATTENDED">
+                            <input type="hidden" name="status" value="ARCHIVED">
 
 
                             <div class="form-group">
-                                {!! Form::submit('Attended',
-                                  array('class'=>'btn border-success text-warning-600 btn-flat btn-icon')) !!}
+                                {!! Form::submit('ARCHIVE',
+                                  array('class'=>'btn border-primary text-success-600 btn-flat btn-icon')) !!}
                             </div>
                             {!! Form::close() !!}
+
+                        @elseif($lead->status == 'ARCHIVED')
+
+
+                            {!! Form::open(['method'=>'DELETE' ,'action'=>['AdminLeadsController@destroy',$lead->id]]) !!}
+
+
+                            <div class="form-group">
+                                {!! Form::submit('DELETE',
+                                  array('class'=>'btn border-danger text-warning-600 btn-flat btn-icon')) !!}
+                            </div>
+                            {!! Form::close() !!}
+
+
+
+                        @endif
 
                           </td>
 

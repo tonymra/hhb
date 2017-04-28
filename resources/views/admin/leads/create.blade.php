@@ -13,9 +13,9 @@
 
             <div class="heading-elements">
                 <div class="heading-btn-group">
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-bars-alt text-primary"></i><span>Baby Massage</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calculator text-primary"></i> <span>Baby Yoga</span></a>
-                    <a href="{{ url('/admin') }}" class="btn btn-link btn-float has-text"><i class="icon-calendar5 text-primary"></i> <span>Yoga Attendance</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_leads}}<span>Total Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_new_leads}} <span>New Leads</span></a>
+                    <a href="" class="btn btn-link btn-float has-text">{{$total_archived_leads}} <span>Archived Leads</span></a>
                 </div>
             </div>
         </div>

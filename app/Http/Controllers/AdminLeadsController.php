@@ -18,8 +18,15 @@ class AdminLeadsController extends Controller
     {
         //Leads home
         $pagetitle='Leads';
-        $leads = Lead::all();
-        return view('admin.leads.index',compact('pagetitle','leads'));
+
+        $leads = Lead::where('status','!=','')->orderBy('status', 'desc')->get();
+
+        //Stats
+        $total_leads = Lead::count();
+        $total_new_leads = Lead::where(['status' => 'NEW'])->get()->count();
+        $total_archived_leads = Lead::where(['status' => 'ARCHIVED'])->get()->count();
+
+        return view('admin.leads.index',compact('pagetitle','leads','total_leads','total_new_leads','total_archived_leads'));
     }
 
     /**
@@ -31,7 +38,13 @@ class AdminLeadsController extends Controller
     {
         //Create new lead
         $pagetitle='Create New Lead';
-        return view('admin.leads.create',compact('pagetitle'));
+
+        //Stats
+        $total_leads = Lead::count();
+        $total_new_leads = Lead::where(['status' => 'NEW'])->get()->count();
+        $total_archived_leads = Lead::where(['status' => 'ARCHIVED'])->get()->count();
+
+        return view('admin.leads.create',compact('pagetitle','total_leads','total_new_leads','total_archived_leads'));
     }
 
     /**
@@ -74,7 +87,12 @@ class AdminLeadsController extends Controller
 
         $lead = Lead::findBySlugOrFail($slug);
 
-        return view('admin.leads.edit',compact('lead','pagetitle'));
+        //Stats
+        $total_leads = Lead::count();
+        $total_new_leads = Lead::where(['status' => 'NEW'])->get()->count();
+        $total_archived_leads = Lead::where(['status' => 'ARCHIVED'])->get()->count();
+
+        return view('admin.leads.edit',compact('lead','pagetitle','total_leads','total_new_leads','total_archived_leads'));
     }
 
     /**
