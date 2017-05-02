@@ -43,9 +43,11 @@ class Card extends Model
         return $this->belongsTo('App\User','user_id','id');
     }
 
-    //Accessor
+    //Accessor - format price to currency format
 
-    public function getPriceAttribute($value, $fractional=false){
+    public function getPriceAttribute($value){
+
+        $fractional=true;
 
         if ($fractional) {
             $value = sprintf('%.2f', $value);
